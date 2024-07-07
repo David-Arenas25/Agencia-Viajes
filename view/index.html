@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Selección de Ciudad y Plan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-4">Formulario de Registro</h2>
+        <form id="registrationForm" class="bg-white p-6 rounded shadow-md">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700">Nombre:</label>
+                <input type="text" id="name" name="name" class="w-full mt-1 p-2 border rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="documento" class="block text-gray-700">Documento:</label>
+                <input type="text" id="documento" name="document" class="w-full mt-1 p-2 border rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="address" class="block text-gray-700">Dirección:</label>
+                <input type="text" id="address" name="address" class="w-full mt-1 p-2 border rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="phone" class="block text-gray-700">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" class="w-full mt-1 p-2 border rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="city" class="block text-gray-700">Ciudad:</label>
+                <select id="city" name="city" class="w-full mt-1 p-2 border rounded" required>
+                    <option value="" disabled selected>Seleccione una ciudad</option>
+                    <option value="cartagena">Cartagena</option>
+                    <option value="sanandres">San Andrés</option>
+                    <option value="santamarta">Santa Marta</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="plan" class="block text-gray-700">Plan:</label>
+                <select id="plan" name="plan" class="w-full mt-1 p-2 border rounded" required>
+                    <option value="" disabled selected>Seleccione un plan</option>
+                    <option value="Plan Familiar">Plan Familiar</option>
+                    <option value="Plan Full">Plan Full</option>
+                    <option value="Plan Básico">Plan Básico</option>
+                </select>
+            </div>
+            <button id="enviar" type="button" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Enviar</button>
+        </form>
+   
+        <section id="my-users" class="mt-6">
+           
+        </section>  
+         <button id="my-users-btn" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">Mostrar Usuarios</button>
+        <section id="filter-users" class="mt-6">
+           
+        </section>
+        
+        <section id="mostrar-filtro"></section>
+        <section id="filter-city" ></section>
+        <button id="filter-users-btn" class="w-full bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600">Filtrar</button>
+        <button id="mostrar-filtro-btn" >Acumulado</button><br>
+        <button id="mostrar-ciudad-btn" >ciudad</button>
+
+    </div>
+    <script type="module" src="/controller/script.js"></script>
+</body>
+</html>
