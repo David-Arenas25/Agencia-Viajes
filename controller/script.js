@@ -1,15 +1,7 @@
-import { listarUsuarios,validarFormulario, filtrarPorUsuarios,acumulado, filtrarPorCiudad } from "./usuario.js";
+import { filtrarPorUsuarios,acumulado, filtrarPorCiudad } from "./filtro.js";
+import { listarUsuarios } from "./usuario.js";
+import { validarFormulario } from "./validaciones.js";
 
-// Función para guardar el usuario
-
-
-// Esperar a que el DOM esté completamente cargado antes de asignar el evento
-
-
-
-
-
-document.getElementById('my-users-btn').addEventListener("click",listarUsuarios)
 
 
 let inputs = document.querySelectorAll("input");
@@ -17,37 +9,30 @@ inputs.forEach((element) => {
   element.addEventListener("keyup", validarFormularioScript)})
 
 
-  document.getElementById('filter-users-btn').addEventListener("click",mostrarUsuariosFiltradosInicio)
-  document.getElementById('enviar').addEventListener("click",validarFormularioScript)
-  document.getElementById('mostrar-filtro-btn').addEventListener("click",mostrarAcumulado)
-  document.getElementById('mostrar-ciudad-btn').addEventListener("click",filtrarCiudad)
+  document.getElementById('mostrar-todos').addEventListener("click",mostrarDatos)
+  document.getElementById('enviar').addEventListener("click",listar)
 
 
 
+  export function validarFormularioScript(){
+    validarFormulario()
+  }
 
 
-export function validarFormularioScript () {
-
-  validarFormulario();
-
-}
-
-export function mostrarUsuariosFiltradosInicio () {
-
-  filtrarPorUsuarios();
-
+export function listar(){
+  validarFormulario()
 }
 
 
-export function mostrarAcumulado(){
-
+export function mostrarDatos(){
+  listarUsuarios()
+  filtrarPorUsuarios()
   acumulado()
-
-}
-
-
-export function filtrarCiudad(){
   filtrarPorCiudad()
 }
+
+
+
+
 
 
