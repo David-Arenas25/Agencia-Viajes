@@ -25,7 +25,7 @@ export function listar(){
 
 
 export function mostrarDatos(){
-  listarUsuarios()
+  // listarUsuarios()
   filtrarPorUsuarios()
   acumulado()
   filtrarPorCiudad()

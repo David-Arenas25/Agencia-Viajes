@@ -4,9 +4,7 @@ export let usuarios = [];
 
 export function listarUsuarios() {
   const usuariosCopy = [...usuarios];
-  const myUsersElement = document.getElementById('my-users');
-  myUsersElement.innerHTML = '';
-  
+  document.getElementById('my-users').innerHTML = '';  
   usuariosCopy.forEach((element) => {
     let container = document.createElement('div');
     container.className = 'bg-white rounded-lg shadow-md p-4 mb-4 transition-transform transform hover:scale-105';
@@ -40,7 +38,7 @@ export function listarUsuarios() {
 
     paddingContainer.append(nombre, documentoContainer, direccionContainer, telefonoContainer, planContainer, ciudadContainer);
     container.append(paddingContainer);
-    myUsersElement.append(container);
+    document.getElementById('my-users').append(card)
   });
 }
 

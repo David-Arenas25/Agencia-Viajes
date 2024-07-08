@@ -3,7 +3,6 @@ import { usuarios } from "./usuario.js";
 export function acumulado() {
   let arrayCopy = [...usuarios];
   document.getElementById('mostrar-filtro').innerHTML = '';
-
   let tarifaFamiliar = 0;
   let tarifaBasico = 0;
   let tarifaFull = 0;

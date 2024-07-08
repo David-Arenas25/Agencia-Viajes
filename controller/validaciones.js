@@ -14,7 +14,7 @@ export function validarFormulario() {
   const nombreRegex = /^[A-Za-z\s]{1,60}$/;
 
   if (!nombreRegex.test(name)) {
-    alert('El nombre debe contener solo letras y espacios, y no más de 60 caracteres.');
+    console.log('El nombre debe contener solo letras y espacios, y no más de 60 caracteres.');
     return;
   }
 
@@ -22,7 +22,7 @@ export function validarFormulario() {
   const documentoRegex = /^\d{1,20}$/;
 
   if (!documentoRegex.test(documento)) {
-    alert('El documento debe contener solo números y no más de 20 caracteres.');
+    console.log('El documento debe contener solo números y no más de 20 caracteres.');
     return;
   }
 
@@ -30,17 +30,17 @@ export function validarFormulario() {
   const telefonoRegex = /^\d{1,20}$/;
 
   if (!telefonoRegex.test(phone)) {
-    alert('El teléfono debe contener solo números y no más de 20 caracteres.');
+    console.log('El teléfono debe contener solo números y no más de 20 caracteres.');
     return;
   }
 
   if (address === '') {
-    alert('La dirección no puede estar vacía.');
+    console.log('La dirección no puede estar vacía.');
     return;
   }
 
   if (plan === '') {
-    alert('Por favor seleccione un plan.');
+    console.log('Por favor seleccione un plan.');
     return;
   }if(plan === 'Plan Básico'){
     tarifa = 1500000
@@ -50,11 +50,11 @@ export function validarFormulario() {
   }else if(plan === 'Plan Full'){
      tarifa = 4500000
   }else{
-    alert(' no se pudi establecer la tarifa')
+    console.log(' no se pudi establecer la tarifa')
   }
 
   if (city === '') {
-    alert('Por favor seleccione una ciudad.');
+    console.log('Por favor seleccione una ciudad.');
     return;
   }
 
