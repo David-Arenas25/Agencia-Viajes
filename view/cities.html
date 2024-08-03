@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudades para Viajar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .sidebar {
+            position: sticky;
+            top: 4rem;
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-teal-500 via-blue-500 to-indigo-600 text-white">
+
+    <!-- Barra de Navegación -->
+    <nav class="bg-gray-800 shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">True Travel</a>
+            <div>
+                <a href="#" class="text-gray-300 hover:text-white mx-2">Inicio</a>
+                <a href="#" class="text-gray-300 hover:text-white mx-2">Planes</a>
+                <a href="#" class="text-gray-300 hover:text-white mx-2">Ciudades</a>
+                <a href="#" class="text-gray-300 hover:text-white mx-2">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4">
+        <!-- Sección de Selección de Planes -->
+        <div class="mb-8">
+            <h2 class="text-3xl font-semibold mb-4 text-white">Selecciona tu Plan</h2>
+            <select id="planSelect" class="block w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white">
+                <option value="basico">Plan Básico</option>
+                <option value="familiar">Plan Familiar</option>
+                <option value="full">Plan Full</option>
+            </select>
+        </div>
+
+        <!-- Sección de Tarjetas de Ciudades -->
+        <div id="cityCards" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Tarjeta de Cartagena -->
+            <div class="bg-purple-200 rounded-lg shadow-lg overflow-hidden">
+                <img src="https://i.pinimg.com/originals/0c/24/32/0c2432aafa659c40453b9e2e60689e55.jpg" alt="Cartagena" class="w-full h-48 object-cover">
+                <div class="p-4 bg-purple-100">
+                    <h2 class="text-xl font-semibold mb-2 text-gray-800">Cartagena</h2>
+                    <p class="text-gray-700">Descubre la belleza histórica y las playas de Cartagena.</p>
+                </div>
+            </div>
+            <!-- Tarjeta de San Andrés -->
+            <div class="bg-teal-200 rounded-lg shadow-lg overflow-hidden">
+                <img src="https://th.bing.com/th/id/R.98de0aaaafad9090d4bdb8c0eafaa6f1?rik=zqA3qONK2ORvsg&riu=http%3a%2f%2fcdn.devacaciones.sv%2fwp-content%2fuploads%2f2015%2f07%2fSANANDRES2.jpg&ehk=z1vrw9EVygueymr7bSc50IkBql3Ao8DYNMQeDAmTaFM%3d&risl=&pid=ImgRaw&r=0" alt="San Andrés" class="w-full h-48 object-cover">
+                <div class="p-4 bg-teal-100">
+                    <h2 class="text-xl font-semibold mb-2 text-gray-800">San Andrés</h2>
+                    <p class="text-gray-700">Explora las aguas cristalinas y los arrecifes de San Andrés.</p>
+                </div>
+            </div>
+            <!-- Tarjeta de Santa Marta -->
+            <div class="bg-yellow-200 rounded-lg shadow-lg overflow-hidden">
+                <img src="https://th.bing.com/th/id/OIP.uE-1Pvr-_cXUbiNs29i2CQHaEK?rs=1&pid=ImgDetMain" alt="Santa Marta" class="w-full h-48 object-cover">
+                <div class="p-4 bg-yellow-100">
+                    <h2 class="text-xl font-semibold mb-2 text-gray-800">Santa Marta</h2>
+                    <p class="text-gray-700">Disfruta de la naturaleza y la cultura en Santa Marta.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Testimonios -->
+        <div class="mt-8">
+            <h2 class="text-3xl font-semibold mb-4 text-white">Testimonios</h2>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <p class="text-gray-300 italic">"¡Una experiencia inolvidable! Cartagena es simplemente mágica."</p>
+                <p class="text-gray-300 text-right">- Juan Pérez</p>
+            </div>
+        </div>
+
+        <!-- Sección de Preguntas Frecuentes -->
+        <div class="mt-8">
+            <h2 class="text-3xl font-semibold mb-4 text-white">Preguntas Frecuentes</h2>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-2 text-gray-300">¿Cuál es el mejor momento para viajar?</h3>
+                <p class="text-gray-300">Depende de la ciudad y tus preferencias, pero generalmente, la temporada seca es ideal.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-8 mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Sidebar con contenido principal -->
+        <div class="lg:col-span-1">
+            <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">Agencia de Viaje</h1>
+            <form id="registrationForm" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-lg font-semibold text-gray-700">Nombre:</label>
+                    <input type="text" id="name" name="name" class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-900 placeholder-gray-500" placeholder="Ingrese su nombre" required>
+                </div>
+                <div>
+                    <label for="document" class="block text-lg font-semibold text-gray-700">Documento:</label>
+                    <input type="text" id="document" name="document" class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-900 placeholder-gray-500" placeholder="Ingrese su documento" required>
+                </div>
+                <div>
+                    <label for="address" class="block text-lg font-semibold text-gray-700">Dirección:</label>
+                    <input type="text" id="address" name="address" class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-900 placeholder-gray-500" placeholder="Ingrese su dirección" required>
+                </div>
+                <div>
+                    <label for="phone" class="block text-lg font-semibold text-gray-700">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-900 placeholder-gray-500" placeholder="Ingrese su teléfono" required>
+                </div>
+                <div>
+                    <label for="city" class="block text-lg font-semibold text-gray-700">Ciudad:</label>
+                    <select id="city" name="city" class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-900">
+                        <option value="" disabled selected>Seleccione una ciudad</option>
+                        <option value="cartagena">Cartagena</option>
+                        <option value="sanandres">San Andrés</option>
+                        <option value="santamarta">Santa Marta</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="plan" class="block text-lg font-semibold text-gray-700">Plan:</label>
+                    <select id="plan" name="plan" class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-900">
+                        <option value="" disabled selected>Seleccione un plan</option>
+                        <option value="Plan Familiar">Plan Familiar</option>
+                        <option value="Plan Full">Plan Full</option>
+                        <option value="Plan Básico">Plan Básico</option>
+                    </select>
+                </div>
+                <button id="enviar" type="button" class="w-full mt-6 bg-gradient-to-r from-orange-400 to-red-500 text-white py-3 rounded-lg hover:from-orange-500 hover:to-red-600 transition duration-300 font-semibold">Enviar</button>
+            </form>
+            
+            <button id="mostrar-todos" class="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition duration-300 font-medium mt-6">Informe</button>
+        </div>
+        
+        <!-- Contenido dinámico en la barra lateral -->
+        <div class="sidebar lg:col-span-2">
+            <div class="bg-blue-200 rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Informe</h2>
+                <!-- Contenido del Informe -->
+            </div>
+            
+            <div class="bg-pink-200 rounded-lg shadow-lg p-6 mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Clientes</h3>
+                <section id="filter-users" class="mt-4 space-y-4">
+                    <!-- Contenido de Clientes -->
+                </section>
+            </div>
+            
+            <div class="bg-yellow-200 rounded-lg shadow-lg p-6 mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Acumulado</h3>
+                <section id="mostrar-filtro" class="mt-4 space-y-4">
+                    <!-- Contenido de Acumulado -->
+                </section>
+            </div>
+            
+            <div class="bg-green-200 rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Destinos Populares</h3>
+                <section id="filter-city" class="mt-4 space-y-4">
+                    <!-- Contenido de Destinos Populares -->
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="/controller/main.js"></script>
+</body>
+</html>

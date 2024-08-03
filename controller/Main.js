@@ -1,6 +1,7 @@
-import { filtrarPorUsuarios,acumulado, filtrarPorCiudad } from "./filtro.js";
-import { listarUsuarios } from "./usuario.js";
+import { acumulado } from "./filtro.js";
+import { filtrarPorUsuarios } from "./UsuarioController.js";
 import { validarFormulario } from "./validaciones.js";
+import { filtrarPorCiudad } from "./CiudadController.js";
 
 
 
