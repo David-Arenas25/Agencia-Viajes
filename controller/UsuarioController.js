@@ -1,4 +1,4 @@
-import { usuarios } from "../Model/UsuarioModel.js";
+import { usuarios } from "../model/UsuarioModel.js";
 export function filtrarPorUsuarios() {
 
   document.getElementById('filter-users').innerHTML = '';
