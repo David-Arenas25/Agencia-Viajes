@@ -4,7 +4,7 @@ import { nombreRegex, telefonoRegex, documentoRegex } from "../model/Validacione
 export function validarFormulario() {
   let tarifa = 0;
   const name = document.getElementById('name').value.trim();
-  const documento = document.getElementById('documento').value.trim();
+  const documento = document.getElementById('document').value.trim();
   const address = document.getElementById('address').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const plan = document.getElementById('plan').value;

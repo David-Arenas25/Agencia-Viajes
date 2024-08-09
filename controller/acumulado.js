@@ -1,5 +1,5 @@
-import { usuarios } from "../Model/UsuarioModel.js";
 
+export let usuarios = []
 export function acumulado() {
   let tarifaFamiliar = 0;
   let tarifaBasico = 0;
