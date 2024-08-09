@@ -1,5 +1,5 @@
+import { usuarios } from "../Model/UsuarioModel.js";
 
-export let usuarios = []
 export function acumulado() {
   let tarifaFamiliar = 0;
   let tarifaBasico = 0;
@@ -7,7 +7,6 @@ export function acumulado() {
 
   document.getElementById('mostrar-filtro').innerHTML = '';
 
-  // Acumular tarifas según el tipo de plan
   usuarios.forEach((usuario) => {
     switch (usuario.plan) {
       case 'Plan Familiar':
@@ -24,31 +23,41 @@ export function acumulado() {
     }
   });
 
-  // Crear y mostrar las tarjetas con los acumulados
+  // Crear el contenedor de tarjetas
   let cardContainer = document.createElement('div');
-  let card = document.createElement('div');
 
+  // Crear y añadir la tarjeta para Plan Familiar
+  let cardFamiliar = document.createElement('div');
   let planFamiliar = document.createElement('h3');
   planFamiliar.textContent = 'Plan Familiar';
   let acumuladoFamiliar = document.createElement('p');
-  acumuladoFamiliar.textContent = tarifaFamiliar.toLocaleString(); // Formatear la tarifa si es necesario
-  card.append(planFamiliar);
-  card.append(acumuladoFamiliar);
+  acumuladoFamiliar.textContent = tarifaFamiliar.toLocaleString();
+  cardFamiliar.append(planFamiliar);
+  cardFamiliar.append(acumuladoFamiliar);
 
+  // Crear y añadir la tarjeta para Plan Básico
+  let cardBasico = document.createElement('div');
   let planBasico = document.createElement('h3');
   planBasico.textContent = 'Plan Básico';
   let acumuladoBasico = document.createElement('p');
   acumuladoBasico.textContent = tarifaBasico.toLocaleString();
-  card.append(planBasico);
-  card.append(acumuladoBasico);
+  cardBasico.append(planBasico);
+  cardBasico.append(acumuladoBasico);
 
+  // Crear y añadir la tarjeta para Plan Full
+  let cardFull = document.createElement('div');
   let planFull = document.createElement('h3');
   planFull.textContent = 'Plan Full';
   let acumuladoFull = document.createElement('p');
   acumuladoFull.textContent = tarifaFull.toLocaleString();
-  card.append(planFull);
-  card.append(acumuladoFull);
+  cardFull.append(planFull);
+  cardFull.append(acumuladoFull);
 
-  cardContainer.append(card);
+  // Añadir todas las tarjetas al contenedor
+  cardContainer.append(cardFamiliar);
+  cardContainer.append(cardBasico);
+  cardContainer.append(cardFull);
+
+  // Añadir el contenedor al elemento con id 'mostrar-filtro'
   document.getElementById('mostrar-filtro').append(cardContainer);
 }
