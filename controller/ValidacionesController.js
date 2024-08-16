@@ -1,5 +1,5 @@
-import { usuarios } from "../model/UsuarioModel.js";
-import { nombreRegex, telefonoRegex, documentoRegex } from "../model/ValidacionesModel.js";
+import { usuarios } from "../Model/UsuarioModel.js";
+import { nombreRegex, telefonoRegex, documentoRegex } from "../Model/ValidacionesModel.js";
 
 export function validarFormulario() {
   let tarifa = 0;
